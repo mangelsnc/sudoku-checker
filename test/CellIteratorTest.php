@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 use Secture\Sudoku\CellIterator;
-use Secture\Sudoku\RowIterator;
 
 final class CellIteratorTest extends TestCase
 {

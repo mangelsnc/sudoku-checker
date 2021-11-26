@@ -6,7 +6,8 @@
         "phpunit/phpunit": "10.0.x-dev"
     },
     "autoload": {
-        "psr-4": {"Secture\\Sudoku\\": "src/"}
+        "psr-4": {"Secture\\Sudoku\\": "src/"},
+        "files": ["Utils.php"]
     },
     "license": "MIT",
     "authors": [

@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 use Secture\Sudoku\ColumnIterator;
-use Secture\Sudoku\RowIterator;
 
 final class ColumnIteratorTest extends TestCase
 {
