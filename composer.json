@@ -15,5 +15,8 @@
             "email": "mangel.snc@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {
+        "lambdish/phunctional": "dev-master"
+    }
 }

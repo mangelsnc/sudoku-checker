@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd0d1b84559b739a934fbc9ed76d7c8c",
-    "packages": [],
+    "content-hash": "fe97b902ea99175d6b88c6d2adea59dd",
+    "packages": [
+        {
+            "name": "lambdish/phunctional",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Lambdish/phunctional.git",
+                "reference": "3f17d1ee6072c63afa12ad5127d4b0662a9d8cee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Lambdish/phunctional/zipball/3f17d1ee6072c63afa12ad5127d4b0662a9d8cee",
+                "reference": "3f17d1ee6072c63afa12ad5127d4b0662a9d8cee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.99",
+                "phpunit/phpunit": "^8.4 || ^9.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/_bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eloi Poch"
+                },
+                {
+                    "name": "Jorge Ávila"
+                },
+                {
+                    "name": "Rafa Gómez"
+                }
+            ],
+            "description": "λ PHP functional library",
+            "keywords": [
+                "functional",
+                "generator",
+                "lambda",
+                "library",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/Lambdish/phunctional/issues",
+                "source": "https://github.com/Lambdish/phunctional/tree/master"
+            },
+            "time": "2021-09-20T10:03:40+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -1705,6 +1763,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "lambdish/phunctional": 20,
         "phpunit/phpunit": 20
     },
     "prefer-stable": false,
