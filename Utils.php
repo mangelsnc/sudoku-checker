@@ -15,5 +15,7 @@ function loadFromFile(string $file): array
         }, $line);
     }
 
+    fclose($fd);
+
     return $sudoku;
 }
