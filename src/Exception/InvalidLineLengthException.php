@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Secture\Sudoku;
+namespace Secture\Sudoku\Exception;
 
 use DomainException;
 

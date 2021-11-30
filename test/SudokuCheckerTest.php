@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use Secture\Sudoku\InvalidLineValuesException;
-use Secture\Sudoku\InvalidSudokuShapeException;
+use Secture\Sudoku\Exception\InvalidLineValuesException;
+use Secture\Sudoku\Exception\InvalidSudokuShapeException;
 use Secture\Sudoku\SudokuChecker;
 
 final class SudokuCheckerTest extends TestCase

@@ -2,6 +2,8 @@
 
 namespace Secture\Sudoku;
 
+use Secture\Sudoku\Exception\InvalidLineLengthException;
+use Secture\Sudoku\Exception\InvalidLineValuesException;
 use function Lambdish\Phunctional\all;
 
 final class LineChecker

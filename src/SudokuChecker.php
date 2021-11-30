@@ -2,6 +2,8 @@
 
 namespace Secture\Sudoku;
 
+use Secture\Sudoku\Exception\InvalidLineValuesException;
+use Secture\Sudoku\Exception\InvalidSudokuShapeException;
 use function Lambdish\Phunctional\all;
 use function Lambdish\Phunctional\apply;
 

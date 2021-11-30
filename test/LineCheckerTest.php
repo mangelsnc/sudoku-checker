@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use Secture\Sudoku\InvalidLineLengthException;
-use Secture\Sudoku\InvalidLineValuesException;
+use Secture\Sudoku\Exception\InvalidLineLengthException;
+use Secture\Sudoku\Exception\InvalidLineValuesException;
 use Secture\Sudoku\LineChecker;
 use function Lambdish\Phunctional\apply;
 
