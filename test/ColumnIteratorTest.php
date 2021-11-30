@@ -15,7 +15,7 @@ final class ColumnIteratorTest extends TestCase
             array_reverse(self::SUDOKU_LINE),
             self::SUDOKU_LINE,
         ];
-        $iterator = new ColumnIterator($sudoku);
+        $iterator = new ColumnIterator(3, $sudoku);
 
         $this->assertEquals([1, 3, 1], $iterator->next());
         $this->assertEquals([2, 2, 2], $iterator->next());
@@ -30,7 +30,7 @@ final class ColumnIteratorTest extends TestCase
             array_reverse(self::SUDOKU_LINE),
             self::SUDOKU_LINE,
         ];
-        $iterator = new ColumnIterator($sudoku);
+        $iterator = new ColumnIterator(3, $sudoku);
 
         $this->assertEquals([1, 3, 1], $iterator->next());
         $this->assertEquals([2, 2, 2], $iterator->next());

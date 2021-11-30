@@ -6,14 +6,14 @@ final class RowIterator implements Iterator
 {
     private int $currentIteration;
 
-    public function __construct(private array $sudoku)
+    public function __construct(private int $maxIterations, private array $sudoku)
     {
         $this->currentIteration = 0;
     }
 
     public function next(): ?array
     {
-        if ($this->currentIteration >= count($this->sudoku)) {
+        if ($this->currentIteration >= $this->maxIterations) {
             return null;
         }
 

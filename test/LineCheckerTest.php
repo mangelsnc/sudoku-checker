@@ -11,7 +11,7 @@ final class LineCheckerTest extends TestCase
     /** @test */
     public function itShouldThrowExceptionIfLineHasTheWrongLenght()
     {
-        $lineChecker = new LineChecker();
+        $lineChecker = new LineChecker(9);
 
         $lineToCheck = [1, 2, 3];
 
@@ -23,7 +23,7 @@ final class LineCheckerTest extends TestCase
     /** @test */
     public function itShouldThrowExceptionIfLineHasInvalidElements()
     {
-        $lineChecker = new LineChecker();
+        $lineChecker = new LineChecker(9);
 
         $lineToCheck = [1, 2, 3, 4, 5, 6, 7, 8, null];
 
@@ -35,7 +35,7 @@ final class LineCheckerTest extends TestCase
     /** @test */
     public function itShouldReturnFalseIfLineIsInvalid()
     {
-        $lineChecker = new LineChecker();
+        $lineChecker = new LineChecker(9);
 
         $lineToCheck = [1, 2, 3, 4, 5, 6, 7, 8, 8];
 
@@ -45,7 +45,7 @@ final class LineCheckerTest extends TestCase
     /** @test */
     public function itShouldReturnTrueIfLineIsValid()
     {
-        $lineChecker = new LineChecker();
+        $lineChecker = new LineChecker(9);
 
         $lineToCheck = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 

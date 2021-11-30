@@ -21,7 +21,7 @@ final class CellIteratorTest extends TestCase
             self::SUDOKU_LINE,
             self::SUDOKU_LINE,
         ];
-        $iterator = new CellIterator($sudoku);
+        $iterator = new CellIterator(9, $sudoku);
 
         $this->assertEquals([1, 2, 3, 1, 2, 3, 1, 2, 3], $iterator->next());
         $this->assertEquals([4, 5, 6, 4, 5, 6, 4, 5, 6], $iterator->next());
@@ -48,7 +48,7 @@ final class CellIteratorTest extends TestCase
             self::SUDOKU_LINE,
             self::SUDOKU_LINE,
         ];
-        $iterator = new CellIterator($sudoku);
+        $iterator = new CellIterator(9, $sudoku);
 
         $this->assertEquals([1, 2, 3, 1, 2, 3, 1, 2, 3], $iterator->next());
         $this->assertEquals([4, 5, 6, 4, 5, 6, 4, 5, 6], $iterator->next());

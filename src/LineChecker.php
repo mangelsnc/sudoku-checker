@@ -8,12 +8,16 @@ use function Lambdish\Phunctional\all;
 
 final class LineChecker
 {
-    const LINE_LENGTH = 9;
-    const VALID_LINE_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    private array $validLineValues;
+
+    public function __construct(private int $length)
+    {
+        $this->validLineValues = range(1, $this->length);
+    }
 
     public function __invoke(array $line): bool
     {
-        if (self::LINE_LENGTH !== count($line)) {
+        if ($this->length !== count($line)) {
             throw new InvalidLineLengthException();
         }
 
@@ -23,6 +27,6 @@ final class LineChecker
 
         $line = array_unique($line);
 
-        return !array_diff(self::VALID_LINE_VALUES, $line);
+        return !array_diff($this->validLineValues, $line);
     }
 }

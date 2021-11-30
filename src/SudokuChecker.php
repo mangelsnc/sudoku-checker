@@ -9,44 +9,31 @@ use function Lambdish\Phunctional\apply;
 
 final class SudokuChecker
 {
-    const ROWS = 9;
-    const COLUMNS = 9;
+    const LENGTH = 9;
 
-    private RowIterator $rowIterator;
-    private ColumnIterator $columnIterator;
-    private CellIterator $cellIterator;
     private LineChecker $lineChecker;
 
     public function __construct()
     {
-        $this->lineChecker = new LineChecker();
+        $this->lineChecker = new LineChecker(self::LENGTH);
     }
 
     public function check(array $sudoku): bool
     {
-
         $this->checkSudokuShape($sudoku);
         $this->checkValues($sudoku);
 
-        $this->columnIterator = new ColumnIterator($sudoku);
-        $this->rowIterator = new RowIterator($sudoku);
-        $this->cellIterator = new CellIterator($sudoku);
+        $iterators = [
+            new ColumnIterator(self::LENGTH, $sudoku),
+            new RowIterator(self::LENGTH, $sudoku),
+            new CellIterator(self::LENGTH, $sudoku),
+        ];
 
-        while ($line = $this->rowIterator->next()) {
-            if (!apply($this->lineChecker, [$line])) {
-                return false;
-            }
-        }
-
-        while ($line = $this->columnIterator->next()) {
-            if (!apply($this->lineChecker, [$line])) {
-                return false;
-            }
-        }
-
-        while ($line = $this->cellIterator->next()) {
-            if (!apply($this->lineChecker, [$line])) {
-                return false;
+        foreach ($iterators as $iterator) {
+            while ($line = $iterator->next()) {
+                if (!apply($this->lineChecker, [$line])) {
+                    return false;
+                }
             }
         }
 
@@ -55,8 +42,8 @@ final class SudokuChecker
 
     private function checkSudokuShape(array $sudoku): void
     {
-        if (count($sudoku) !== self::ROWS || array_reduce($sudoku, function ($previous, $row) {
-                return $previous && count($row) === self::COLUMNS;
+        if (count($sudoku) !== self::LENGTH || array_reduce($sudoku, function ($previous, $row) {
+                return $previous && count($row) === self::LENGTH;
             })) {
             throw new InvalidSudokuShapeException();
         }
