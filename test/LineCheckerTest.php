@@ -50,5 +50,7 @@ final class LineCheckerTest extends TestCase
         $lineToCheck = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
         $this->assertTrue(apply($lineChecker, [$lineToCheck]));
+
+        $this->assertTrue(apply($lineChecker, [array_reverse($lineToCheck)]));
     }
 }
