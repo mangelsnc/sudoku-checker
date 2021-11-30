@@ -2,28 +2,21 @@
 
 namespace Secture\Sudoku;
 
-final class ColumnIterator
+final class ColumnIterator implements Iterator
 {
     private int $currentIteration;
 
-    public function __construct(private array $sudoku)
+    public function __construct(private int $maxIterations, private array $sudoku)
     {
         $this->currentIteration = 0;
     }
 
     public function next(): ?array
     {
-        if ($this->currentIteration >= count($this->sudoku[0])) {
+        if ($this->currentIteration >= $this->maxIterations) {
             return null;
         }
 
-        $column = [];
-        foreach ($this->sudoku as $row) {
-            $column[] = $row[$this->currentIteration];
-        }
-
-        $this->currentIteration++;
-
-        return $column;
+        return array_column($this->sudoku, $this->currentIteration++);
     }
 }

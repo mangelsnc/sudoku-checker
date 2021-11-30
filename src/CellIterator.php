@@ -2,34 +2,29 @@
 
 namespace Secture\Sudoku;
 
-final class CellIterator
+final class CellIterator implements Iterator
 {
-    const MAX_ITERATIONS = 9;
-    const CELL_HEIGHT = 3;
-    const CELL_WIDTH = 3;
-    const ROW_LENGTH = 9;
-
     private int $currentIteration;
+    private int $cellLength;
 
-    public function __construct(private array $sudoku)
+    public function __construct(private int $maxIterations, private array $sudoku)
     {
         $this->currentIteration = 0;
+        $this->cellLength = (int) sqrt($this->maxIterations);
     }
 
     public function next(): ?array
     {
-        if ($this->currentIteration >= self::MAX_ITERATIONS) {
+        if ($this->currentIteration >= $this->maxIterations) {
             return null;
         }
 
-        $initialRowValue = floor($this->currentIteration / self::CELL_HEIGHT) * self::CELL_HEIGHT;
-        $endRowValue = $initialRowValue + 2;
-        $initialColumnValue = ($this->currentIteration * self::CELL_WIDTH) % self::ROW_LENGTH;
-        $endColumnValue = $initialColumnValue + 2;
+        $endRow = (int) (floor($this->currentIteration / $this->cellLength) + 1) * $this->cellLength;
+        $endColumn = ($this->currentIteration % $this->cellLength + 1) * $this->cellLength;
         $cell = [];
 
-        for ($row = $initialRowValue; $row <= $endRowValue; $row++) {
-            for ($column = $initialColumnValue; $column <= $endColumnValue; $column++) {
+        for ($row = $endRow - $this->cellLength; $row < $endRow; $row++) {
+            for ($column = $endColumn - $this->cellLength; $column < $endColumn; $column++) {
                 $cell[] = $this->sudoku[$row][$column];
             }
         }

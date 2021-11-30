@@ -15,7 +15,7 @@ final class RowIteratorTest extends TestCase
             array_reverse(self::SUDOKU_LINE),
             self::SUDOKU_LINE,
         ];
-        $iterator = new RowIterator($sudoku);
+        $iterator = new RowIterator(3, $sudoku);
 
         $this->assertEquals(self::SUDOKU_LINE, $iterator->next());
         $this->assertEquals(array_reverse(self::SUDOKU_LINE), $iterator->next());
@@ -30,7 +30,7 @@ final class RowIteratorTest extends TestCase
             array_reverse(self::SUDOKU_LINE),
             self::SUDOKU_LINE,
         ];
-        $iterator = new RowIterator($sudoku);
+        $iterator = new RowIterator(3, $sudoku);
 
         $this->assertEquals(self::SUDOKU_LINE, $iterator->next());
         $this->assertEquals(array_reverse(self::SUDOKU_LINE), $iterator->next());
