@@ -2,7 +2,7 @@
 
 namespace Secture\Sudoku;
 
-final class CellIterator
+final class CellIterator implements Iterator
 {
     const MAX_ITERATIONS = 9;
     const CELL_HEIGHT = 3;

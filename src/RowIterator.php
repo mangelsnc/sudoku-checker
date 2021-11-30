@@ -2,7 +2,7 @@
 
 namespace Secture\Sudoku;
 
-final class RowIterator
+final class RowIterator implements Iterator
 {
     private int $currentIteration;
 

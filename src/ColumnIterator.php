@@ -2,7 +2,7 @@
 
 namespace Secture\Sudoku;
 
-final class ColumnIterator
+final class ColumnIterator implements Iterator
 {
     private int $currentIteration;
 
