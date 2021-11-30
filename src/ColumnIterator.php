@@ -17,13 +17,6 @@ final class ColumnIterator
             return null;
         }
 
-        $column = [];
-        foreach ($this->sudoku as $row) {
-            $column[] = $row[$this->currentIteration];
-        }
-
-        $this->currentIteration++;
-
-        return $column;
+        return array_column($this->sudoku, $this->currentIteration++);
     }
 }
